@@ -4,6 +4,7 @@ createApp({
   data() {
     return {
         currentContactIndex: 0,
+        messageInput: '',
         contacts: [
             {
                 name: 'Michele',
@@ -172,6 +173,18 @@ createApp({
   methods: {
     displayChat(i) {
         this.currentContactIndex = i
+    },
+    sendMessage() {
+       // creare un nuovo oggetto message da aggiungere alla conversazione 
+       const newMessage = {
+        date: '10/01/2020 15:51:00',
+        message: this.messageInput,
+        status: 'sent'
+       }
+
+       this.contacts[this.currentContactIndex].messages.push(newMessage)
+
+       this.messageInput = ''
     }
   }
 }).mount('#app')

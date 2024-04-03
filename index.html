@@ -148,7 +148,7 @@
                     <div class="emoji-icon">
                         <i class="icon fa-regular fa-face-smile"></i>
                     </div>
-                    <input type="text" class="write-message" placeholder="Scrivi un messagio">
+                    <input v-model="messageInput" type="text" class="write-message" placeholder="Scrivi un messagio" @keyup.enter="sendMessage">
                     <div class="audio-icon">
                         <i class="icon fa-solid fa-microphone"></i>
                     </div>
