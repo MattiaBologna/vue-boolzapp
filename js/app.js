@@ -5,6 +5,8 @@ createApp({
     return {
         currentContactIndex: 0,
         messageInput: '',
+        searchChat: '',
+        filteredChat: [],
         contacts: [
             {
                 name: 'Michele',
@@ -196,6 +198,9 @@ createApp({
            }
     
            this.contacts[this.currentContactIndex].messages.push(newMessage)
+    },
+    filterChat() {
+        this.filteredChat = ['No']
     }
   }
 }).mount('#app')
