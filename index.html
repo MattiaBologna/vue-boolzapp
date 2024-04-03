@@ -62,7 +62,7 @@
 
                 <div class="sidebar-conversations">
                     <ul class="chat-list">
-                        <li v-for="(contact, i) in contacts" class="chat-card">
+                        <li v-for="(contact, i) in contacts" class="chat-card" @click="displayChat(i)">
                             <div class="contact-info">
                                 <img class="pro-pic" :src="contact.avatar" alt="">
                                 <div class="chat-info">
@@ -96,9 +96,9 @@
 
                 <div class="chat-nav">
                     <div class="contact-info">
-                        <img class="pro-pic" src="./img/avatar_1.jpg" alt="">
+                        <img class="pro-pic" :src="contacts[currentContactIndex].avatar" alt="">
                         <div class="head-chat-info">
-                            <p class="contact-name">Michele</p>
+                            <p class="contact-name">{{contacts[currentContactIndex].name}}</p>
                             <p class="last-access">Ultimo accesso oggi alle 16:26</p>
                         </div>
                     </div>
@@ -117,11 +117,11 @@
 
                 <!-- CHAT MAIN -->
 
-                <div class="chat-main">
-                    <div class="message mine">
+                <ul class="chat-main">
+                    <li v-for="(message, i) in contacts[currentContactIndex].messages" :class="message.status === 'sent' ? 'mine' : 'others'" class="message">
                         <div class="message-top">
                             <div class="text">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, voluptate accusantium eum accusamus vitae aliquam id modi maiores neque odit quae commodi hic alias? Earum!
+                                {{message.message}}
                             </div>
                             <div class="message-menu">
                                 <i class="fa-solid fa-chevron-down"></i>
@@ -139,74 +139,8 @@
                         <div class="emoji-react">
                             <i class="fa-solid fa-face-laugh"></i>
                         </div>
-                    </div>
-                    <div class="message others">
-                        <div class="message-top">
-                            <div class="text">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, sed. Nobis, dolorem ratione doloremque perferendis placeat voluptatum, laboriosam porro nam ipsa adipisci consequatur provident nesciunt?
-                            </div>
-                            <div class="message-menu">
-                                <i class="fa-solid fa-chevron-down"></i>
-                                <ul class="message-dropdown-menu">
-                                    <li>Rispondi</li>
-                                    <li>Reagisci</li>
-                                    <li>inoltra</li>
-                                    <li>Importante</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="message-time">
-                            16:15
-                        </div>
-                        <div class="emoji-react">
-                            <i class="fa-solid fa-face-laugh"></i>
-                        </div>
-                    </div>
-                    <div class="message mine">
-                        <div class="message-top">
-                            <div class="text">
-                                Testo corto hahahaaha lol XD
-                            </div>
-                            <div class="message-menu">
-                                <i class="fa-solid fa-chevron-down"></i>
-                                <ul class="message-dropdown-menu">
-                                    <li>Rispondi</li>
-                                    <li>Reagisci</li>
-                                    <li>inoltra</li>
-                                    <li>Importante</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="message-time">
-                            16:13
-                        </div>
-                        <div class="emoji-react">
-                            <i class="fa-solid fa-face-laugh"></i>
-                        </div>
-                    </div>
-                    <div class="message others">
-                        <div class="message-top">
-                            <div class="text">
-                                Testo corto hahahaaha lol XD
-                            </div>
-                            <div class="message-menu">
-                                <i class="fa-solid fa-chevron-down"></i>
-                                <ul class="message-dropdown-menu">
-                                    <li>Rispondi</li>
-                                    <li>Reagisci</li>
-                                    <li>inoltra</li>
-                                    <li>Importante</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="message-time">
-                            16:15
-                        </div>
-                        <div class="emoji-react">
-                            <i class="fa-solid fa-face-laugh"></i>
-                        </div>
-                    </div>
-                </div>
+                    </li>
+                </ul>
                 
                 <!-- CHAT WRITE  -->
                 
