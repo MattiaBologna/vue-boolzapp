@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boolzapp</title>
+    <script src="https://kit.fontawesome.com/30a5d231e3.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <div id="app">
+
+        <div class="app">
+
+            <!-- SIDEBAR -->
+
+            <div class="sidebar">
+
+                <!-- SIDEBAR - NAV -->
+
+                <nav class="sidebar-nav">
+                    <img class="user-profile-img" src="./img/avatar_io.jpg" alt="user profile pic">
+                    <ul class="sidebar-nav-tools">
+                        <li class="nav-status">
+                            <i class="icon fa-solid fa-circle-notch"></i>
+                        </li>
+                        <li class="nav-new-chat">
+                            <i class="icon fa-solid fa-message"></i>
+                        </li>
+                        <li class="nav menu">
+                            <i class="icon fa-solid fa-ellipsis-vertical"></i>
+                        </li>  
+                    </ul>
+                </nav>
+
+                <!-- SIDEBAR - POP UP  -->
+
+                <div class="sidebar-pop-up">
+                    <div class="pop-up-icon">
+                        <i class="fa-solid fa-bell-slash"></i>
+                    </div>
+                    <div class="pop-up-text">
+                        <p class="pop-up-title">Ricevi notifiche di nuovi messaggi</p>
+                        <p class="pop-up-subtitle">Attiva notifiche desktop</p>
+                    </div>
+                </div>
+
+                <!-- SIDEBAR SEARCH BAR -->
+
+                <div class="sidebar-search">
+                    <input class="input-search" type="search" placeholder="Cerca o inizia una nuova chat">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <i class="fa-solid fa-arrow-left"></i>
+                </div>
+
+                <!-- SIDEBAR - CONVERSATIONS -->
+
+                <div class="sidebar-conversations">
+                    <ul class="chat-list">
+                        <li class="chat-card">
+                            <div class="contact-info">
+                                <img class="pro-pic" src="./img/avatar_1.jpg" alt="">
+                                <div class="chat-info">
+                                    <p class="contact-name">Michele</p>
+                                    <p class="last-message">Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                            <div class="last-message-time">16:15</div>
+                            <div class="sidebar-chat-menu">
+                                <i class="fa-solid fa-chevron-down"></i>
+                                <ul class="chat-dropdown-menu">
+                                    <li>Archivia chat</li>
+                                    <li>Silenzia notifiche</li>
+                                    <li>Elimina chat</li>
+                                    <li>Fissa chat</li>
+                                    <li>Segna come da leggere</li>
+                                    <li>Blocca</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="chat-card">
+                            <div class="contact-info">
+                                <img class="pro-pic" src="./img/avatar_2.jpg" alt="">
+                                <div class="chat-info">
+                                    <p class="contact-name">Fabio</p>
+                                    <p class="last-message">Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                            <div class="last-message-time">16:05</div>
+                            <div class="sidebar-chat-menu">
+                                <i class="fa-solid fa-chevron-down"></i>
+                                <ul class="chat-dropdown-menu">
+                                    <li>Archivia chat</li>
+                                    <li>Silenzia notifiche</li>
+                                    <li>Elimina chat</li>
+                                    <li>Fissa chat</li>
+                                    <li>Segna come da leggere</li>
+                                    <li>Blocca</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="chat-card">
+                            <div class="contact-info">
+                                <img class="pro-pic" src="./img/avatar_3.jpg" alt="">
+                                <div class="chat-info">
+                                    <p class="contact-name">Samuele</p>
+                                    <p class="last-message">Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                            <div class="last-message-time">16:03</div>
+                            <div class="sidebar-chat-menu">
+                                <i class="fa-solid fa-chevron-down"></i>
+                                <ul class="chat-dropdown-menu">
+                                    <li>Archivia chat</li>
+                                    <li>Silenzia notifiche</li>
+                                    <li>Elimina chat</li>
+                                    <li>Fissa chat</li>
+                                    <li>Segna come da leggere</li>
+                                    <li>Blocca</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="chat-card">
+                            <div class="contact-info">
+                                <img class="pro-pic" src="./img/avatar_4.jpg" alt="">
+                                <div class="chat-info">
+                                    <p class="contact-name">Alessandro B.</p>
+                                    <p class="last-message">Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                            <div class="last-message-time">15:50</div>
+                            <div class="sidebar-chat-menu">
+                                <i class="fa-solid fa-chevron-down"></i>
+                                <ul class="chat-dropdown-menu">
+                                    <li>Archivia chat</li>
+                                    <li>Silenzia notifiche</li>
+                                    <li>Elimina chat</li>
+                                    <li>Fissa chat</li>
+                                    <li>Segna come da leggere</li>
+                                    <li>Blocca</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="chat-card">
+                            <div class="contact-info">
+                                <img class="pro-pic" src="./img/avatar_5.jpg" alt="">
+                                <div class="chat-info">
+                                    <p class="contact-name">Alessandro L.</p>
+                                    <p class="last-message">Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                            <div class="last-message-time">15:45</div>
+                            <div class="sidebar-chat-menu">
+                                <i class="fa-solid fa-chevron-down"></i>
+                                <ul class="chat-dropdown-menu">
+                                    <li>Archivia chat</li>
+                                    <li>Silenzia notifiche</li>
+                                    <li>Elimina chat</li>
+                                    <li>Fissa chat</li>
+                                    <li>Segna come da leggere</li>
+                                    <li>Blocca</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="chat-card">
+                            <div class="contact-info">
+                                <img class="pro-pic" src="./img/avatar_6.jpg" alt="">
+                                <div class="chat-info">
+                                    <p class="contact-name">Claudia</p>
+                                    <p class="last-message">Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                            <div class="last-message-time">15:40</div>
+                            <div class="sidebar-chat-menu">
+                                <i class="fa-solid fa-chevron-down"></i>
+                                <ul class="chat-dropdown-menu">
+                                    <li>Archivia chat</li>
+                                    <li>Silenzia notifiche</li>
+                                    <li>Elimina chat</li>
+                                    <li>Fissa chat</li>
+                                    <li>Segna come da leggere</li>
+                                    <li>Blocca</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="chat-card">
+                            <div class="contact-info">
+                                <img class="pro-pic" src="./img/avatar_7.jpg" alt="">
+                                <div class="chat-info">
+                                    <p class="contact-name">Federico</p>
+                                    <p class="last-message">Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                            <div class="last-message-time">15:22</div>
+                            <div class="sidebar-chat-menu">
+                                <i class="fa-solid fa-chevron-down"></i>
+                                <ul class="chat-dropdown-menu">
+                                    <li>Archivia chat</li>
+                                    <li>Silenzia notifiche</li>
+                                    <li>Elimina chat</li>
+                                    <li>Fissa chat</li>
+                                    <li>Segna come da leggere</li>
+                                    <li>Blocca</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="chat-card">
+                            <div class="contact-info">
+                                <img class="pro-pic" src="./img/avatar_8.jpg" alt="">
+                                <div class="chat-info">
+                                    <p class="contact-name">Davide</p>
+                                    <p class="last-message">Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                            <div class="last-message-time">15:15</div>
+                            <div class="sidebar-chat-menu">
+                                <i class="fa-solid fa-chevron-down"></i>
+                                <ul class="chat-dropdown-menu">
+                                    <li>Archivia chat</li>
+                                    <li>Silenzia notifiche</li>
+                                    <li>Elimina chat</li>
+                                    <li>Fissa chat</li>
+                                    <li>Segna come da leggere</li>
+                                    <li>Blocca</li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- CHAT -->
+
+            <div class="chat">
+
+                <!-- CHAT NAV -->
+
+                <div class="chat-nav">
+                    <div class="contact-info">
+                        <img class="pro-pic" src="./img/avatar_1.jpg" alt="">
+                        <div class="head-chat-info">
+                            <p class="contact-name">Michele</p>
+                            <p class="last-access">Ultimo accesso oggi alle 16:26</p>
+                        </div>
+                    </div>
+                    <ul class="chat-nav-tools">
+                        <li class="nav-search-message">
+                            <i class="icon fa-solid fa-magnifying-glass"></i>
+                        </li>
+                        <li class="nav-attach-file">
+                            <i class="icon fa-solid fa-paperclip"></i>
+                        </li>
+                        <li class="nav menu">
+                            <i class="icon fa-solid fa-ellipsis-vertical"></i>
+                        </li>  
+                    </ul>
+                </div>
+
+                <!-- CHAT MAIN -->
+
+                <div class="chat-main">
+                    <div class="message mine">
+                        <div class="message-top">
+                            <div class="text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, voluptate accusantium eum accusamus vitae aliquam id modi maiores neque odit quae commodi hic alias? Earum!
+                            </div>
+                            <div class="message-menu">
+                                <i class="fa-solid fa-chevron-down"></i>
+                                <ul class="message-dropdown-menu">
+                                    <li>Rispondi</li>
+                                    <li>Reagisci</li>
+                                    <li>inoltra</li>
+                                    <li>Importante</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="message-time">
+                            16:13
+                        </div>
+                        <div class="emoji-react">
+                            <i class="fa-solid fa-face-laugh"></i>
+                        </div>
+                    </div>
+                    <div class="message others">
+                        <div class="message-top">
+                            <div class="text">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, sed. Nobis, dolorem ratione doloremque perferendis placeat voluptatum, laboriosam porro nam ipsa adipisci consequatur provident nesciunt?
+                            </div>
+                            <div class="message-menu">
+                                <i class="fa-solid fa-chevron-down"></i>
+                                <ul class="message-dropdown-menu">
+                                    <li>Rispondi</li>
+                                    <li>Reagisci</li>
+                                    <li>inoltra</li>
+                                    <li>Importante</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="message-time">
+                            16:15
+                        </div>
+                        <div class="emoji-react">
+                            <i class="fa-solid fa-face-laugh"></i>
+                        </div>
+                    </div>
+                    <div class="message mine">
+                        <div class="message-top">
+                            <div class="text">
+                                Testo corto hahahaaha lol XD
+                            </div>
+                            <div class="message-menu">
+                                <i class="fa-solid fa-chevron-down"></i>
+                                <ul class="message-dropdown-menu">
+                                    <li>Rispondi</li>
+                                    <li>Reagisci</li>
+                                    <li>inoltra</li>
+                                    <li>Importante</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="message-time">
+                            16:13
+                        </div>
+                        <div class="emoji-react">
+                            <i class="fa-solid fa-face-laugh"></i>
+                        </div>
+                    </div>
+                    <div class="message others">
+                        <div class="message-top">
+                            <div class="text">
+                                Testo corto hahahaaha lol XD
+                            </div>
+                            <div class="message-menu">
+                                <i class="fa-solid fa-chevron-down"></i>
+                                <ul class="message-dropdown-menu">
+                                    <li>Rispondi</li>
+                                    <li>Reagisci</li>
+                                    <li>inoltra</li>
+                                    <li>Importante</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="message-time">
+                            16:15
+                        </div>
+                        <div class="emoji-react">
+                            <i class="fa-solid fa-face-laugh"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CHAT WRITE  -->
+                
+                <div class="chat-write">
+                    <div class="emoji-icon">
+                        <i class="icon fa-regular fa-face-smile"></i>
+                    </div>
+                    <input type="text" class="write-message" placeholder="Scrivi un messagio">
+                    <div class="audio-icon">
+                        <i class="icon fa-solid fa-microphone"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="./js/app.js"></script>
+</body>
+</html>
