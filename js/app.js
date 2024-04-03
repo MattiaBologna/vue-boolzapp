@@ -185,6 +185,17 @@ createApp({
        this.contacts[this.currentContactIndex].messages.push(newMessage)
 
        this.messageInput = ''
+
+       setTimeout(this.receiveMessage, 1000)
+    },
+    receiveMessage() {
+        const newMessage = {
+            date: '10/01/2020 15:51:00',
+            message: 'Ok',
+            status: 'received'
+           }
+    
+           this.contacts[this.currentContactIndex].messages.push(newMessage)
     }
   }
 }).mount('#app')
