@@ -6,7 +6,6 @@ createApp({
         currentContactIndex: 0,
         messageInput: '',
         searchChat: '',
-        filteredChat: [],
         contacts: [
             {
                 name: 'Michele',
@@ -198,9 +197,6 @@ createApp({
            }
     
            this.contacts[this.currentContactIndex].messages.push(newMessage)
-    },
-    filterChat() {
-        this.filteredChat = [1]
     }
   }, 
   computed: {
@@ -209,6 +205,11 @@ createApp({
     },
     currentChat() {
         return this.currentContact.messages
+    }, 
+    filteredChat() {
+        return this.contacts.filter((contact) => {
+            return contact.name.toLowerCase().match(this.searchChat.toLowerCase())
+        } )
     }
   }
 }).mount('#app')

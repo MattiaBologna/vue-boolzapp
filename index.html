@@ -53,7 +53,7 @@
                 <!-- SIDEBAR SEARCH BAR -->
 
                 <div class="sidebar-search">
-                    <input v-model="searchChat" class="input-search" type="search" placeholder="Cerca o inizia una nuova chat" @click="filterChat">
+                    <input v-model="searchChat" class="input-search" type="search" placeholder="Cerca o inizia una nuova chat">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <i class="fa-solid fa-arrow-left"></i>
                 </div>
@@ -62,7 +62,7 @@
 
                 <div class="sidebar-conversations">
                     <ul class="chat-list">
-                        <li v-if="filteredChat.length === 0" v-for="(contact, i) in contacts" class="chat-card" :class="i === currentContactIndex ? 'active' : ''" @click="displayChat(i)">
+                        <li v-for="(contact, i) in filteredChat" class="chat-card" :class="i === currentContactIndex ? 'active' : ''" @click="displayChat(i)">
                             <div class="contact-info">
                                 <img class="pro-pic" :src="contact.avatar" alt="">
                                 <div class="chat-info">
@@ -83,7 +83,6 @@
                                 </ul>
                             </div>
                         </li>
-                        <li v-else>{{filteredChat}}</li>
                     </ul>
                 </div>
 
