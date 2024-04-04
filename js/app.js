@@ -192,11 +192,15 @@ createApp({
     receiveMessage() {
         const newMessage = {
             date: '10/01/2020 15:51:00',
-            message: 'Ok',
+            message: 'Ciao',
             status: 'received'
            }
     
            this.contacts[this.currentContactIndex].messages.push(newMessage)
+    },
+    deleteMessage(i) {
+        this.contacts[this.currentContactIndex].messages.splice(i, 1)
+        console.log(this.contacts[this.currentContactIndex].messages)
     }
   }, 
   computed: {

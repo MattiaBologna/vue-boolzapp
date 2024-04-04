@@ -473,6 +473,7 @@ body {
 .message-dropdown-menu li,
 .chat-dropdown-menu li {
     padding: 5px 10px;
+    border-radius: 4px;
 }
 
 .message-dropdown-menu li:hover,
@@ -480,6 +481,7 @@ body {
  {
     background-color: rgb(228, 228, 228);
     animation: cardBgSmoothTransition 0.2s ease;
+    cursor: pointer;
 }
 
 @keyframes slideInLeft {
@@ -499,6 +501,7 @@ body {
 .chat-card:hover {
     background-color: rgb(228, 228, 228);
     animation: cardBgSmoothTransition 0.2s ease;
+    cursor: pointer;
 }
 
 @keyframes cardBgSmoothTransition {
