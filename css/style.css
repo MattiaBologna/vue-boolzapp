@@ -243,6 +243,10 @@ body {
     border-top: 2px solid var(--darker-white);
 }
 
+.chat-card.active {
+    background-color: rgb(228, 228, 228);
+}
+
 
 
 

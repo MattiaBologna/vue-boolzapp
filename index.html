@@ -62,15 +62,15 @@
 
                 <div class="sidebar-conversations">
                     <ul class="chat-list">
-                        <li v-if="filteredChat.length === 0" v-for="(contact, i) in contacts" class="chat-card" @click="displayChat(i)">
+                        <li v-if="filteredChat.length === 0" v-for="(contact, i) in contacts" class="chat-card" :class="i === currentContactIndex ? 'active' : ''" @click="displayChat(i)">
                             <div class="contact-info">
                                 <img class="pro-pic" :src="contact.avatar" alt="">
                                 <div class="chat-info">
                                     <p class="contact-name">{{contact.name}}</p>
-                                    <p class="last-message">Lorem ipsum dolor sit amet.</p>
+                                    <p class="last-message">{{ contact.messages[contact.messages.length - 1].message }}</p>
                                 </div>
                             </div>
-                            <div class="last-message-time">16:15</div>
+                            <div class="last-message-time">{{contact.messages[contact.messages.length - 1].date.slice(11,16)}}</div>
                             <div class="sidebar-chat-menu">
                                 <i class="fa-solid fa-chevron-down"></i>
                                 <ul class="chat-dropdown-menu">
@@ -97,9 +97,9 @@
 
                 <div class="chat-nav">
                     <div class="contact-info">
-                        <img class="pro-pic" :src="contacts[currentContactIndex].avatar" alt="">
+                        <img class="pro-pic" :src="currentContact.avatar" alt="">
                         <div class="head-chat-info">
-                            <p class="contact-name">{{contacts[currentContactIndex].name}}</p>
+                            <p class="contact-name">{{currentContact.name}}</p>
                             <p class="last-access">Ultimo accesso oggi alle 16:26</p>
                         </div>
                     </div>
@@ -119,7 +119,7 @@
                 <!-- CHAT MAIN -->
 
                 <ul class="chat-main">
-                    <li v-for="(message, i) in contacts[currentContactIndex].messages" :class="message.status === 'sent' ? 'mine' : 'others'" class="message">
+                    <li v-for="(message, i) in currentChat" :class="message.status === 'sent' ? 'mine' : 'others'" class="message">
                         <div class="message-top">
                             <div class="text">
                                 {{message.message}}
@@ -135,7 +135,7 @@
                             </div>
                         </div>
                         <div class="message-time">
-                            16:13
+                            {{message.date.slice(11,16)}}
                         </div>
                         <div class="emoji-react">
                             <i class="fa-solid fa-face-laugh"></i>

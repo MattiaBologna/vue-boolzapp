@@ -200,7 +200,15 @@ createApp({
            this.contacts[this.currentContactIndex].messages.push(newMessage)
     },
     filterChat() {
-        this.filteredChat = ['No']
+        this.filteredChat = [1]
+    }
+  }, 
+  computed: {
+    currentContact() {
+        return this.contacts[this.currentContactIndex]
+    },
+    currentChat() {
+        return this.currentContact.messages
     }
   }
 }).mount('#app')
