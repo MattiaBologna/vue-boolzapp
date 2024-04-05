@@ -178,25 +178,28 @@ createApp({
     sendMessage() {
        // creare un nuovo oggetto message da aggiungere alla conversazione 
        const newMessage = {
-        date: '10/01/2020 15:51:00',
+        date: '10/01/2020 15:30:55',
         message: this.messageInput,
         status: 'sent'
        }
 
-       this.contacts[this.currentContactIndex].messages.push(newMessage)
+       const currentChatMessages = this.contacts[this.currentContactIndex].messages
+       currentChatMessages.push(newMessage)
 
        this.messageInput = ''
 
-       setTimeout(this.receiveMessage, 1000)
+       this.receiveMessage(currentChatMessages)
     },
-    receiveMessage() {
-        const newMessage = {
-            date: '10/01/2020 15:51:00',
-            message: 'Ciao',
-            status: 'received'
-           }
-    
-           this.contacts[this.currentContactIndex].messages.push(newMessage)
+    receiveMessage(currentChatMessages) {
+        setTimeout(() => {
+            const newMessage = {
+                date: '10/01/2020 15:30:55',
+                message: 'Ciao',
+                status: 'received'
+               }
+        
+            currentChatMessages.push(newMessage)
+        }, 1500)
     },
     deleteMessage(i) {
         this.contacts[this.currentContactIndex].messages.splice(i, 1)
@@ -217,3 +220,4 @@ createApp({
     }
   }
 }).mount('#app')
+
